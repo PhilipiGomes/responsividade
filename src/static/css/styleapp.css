@@ -12,14 +12,14 @@
 /* Fontes */
 @font-face {
   font-family: "Karantina-Bold";
-  src: url("/src/static/fonts/Karantina-Bold.ttf") format("truetype");
+  src: url("/static/fonts/Karantina-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Nexa-Heavy";
-  src: url("/src/static/fonts/Nexa-Heavy.ttf") format("truetype");
+  src: url("/static/fonts/Nexa-Heavy.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
