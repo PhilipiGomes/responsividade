@@ -50,13 +50,31 @@
   overflow-y: auto;
 }
 
+/* Color palette imported from styleapp.css */
+:root {
+  --primary: #0077CC;
+  /* Azul Água (principal) */
+  --primary-light: #73a8ce;
+  /* Tom claro usado no projeto atual */
+  --primary-xlight: #7fc0f5;
+  /* variação clara */
+  --secondary: #4CAF50;
+  /* Verde Natureza */
+  --light-gray: #E0E0E0;
+  --white: #FFFFFF;
+  --accent: #FF9800;
+  /* Laranja Solar */
+  --text-dark: #003366;
+  /* Azul Escuro Profundo */
+}
+
 ::-webkit-scrollbar-track {
-  background: #3a2d26
+  background: var(--text-dark)
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffffff; 
-  border-radius: 4px; 
+  background: var(--white);
+  border-radius: 4px;
 }
 
 
@@ -76,14 +94,14 @@ html {
 }
 
 body {
-  background: #73a8ce;
+  background: var(--primary-light);
   position: relative;
   line-height: 1.6;
   background-image: url(/static/img/fundo.png);
 }
 
 header {
-  background-color: #402f26;
+  background-color: #bbdefbee;
   padding: clamp(.5rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
   box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
   border-radius: clamp(30px, 6vw, 80px);
@@ -115,7 +133,7 @@ header.scrolled {
 }
 
 .logo {
-  height: clamp(35px, 5vw, 50px);
+  height: 120px;
   width: auto;
   transition: transform .3s ease
 }
@@ -184,7 +202,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
   font-size: clamp(20px, 3vw, 40px);
   font-family: Karantina-Regular;
@@ -203,7 +221,7 @@ nav ul li a::before {
   left: 50%;
   width: 0;
   height: 2px;
-  background: #fff;
+  background: var(--white);
   transition: all .3s cubic-bezier(.4, 0, .2, 1);
   transform: translateX(-50%)
 }
@@ -233,7 +251,7 @@ nav ul li a:hover {
 }
 
 .rectangle-2 {
-  background: linear-gradient(0deg, rgba(115, 168, 206, 1) 0, rgba(217, 217, 217, 0) 100%);
+  background: linear-gradient(0deg, var(--primary-light) 0, rgba(217, 217, 217, 0) 100%);
   width: 100%;
   min-height: clamp(800px, 100vh, 1200px);
   position: relative;
@@ -333,12 +351,12 @@ nav ul li a:hover {
 }
 
 .btn-saiba-mais {
-  background: #413027;
+  background: var(--primary-light);
   font-family: Karantina-Regular, sans-serif;
   font-size: clamp(24px, 4vw, 40px);
   color: #fff;
   height: 90px;
-  width: 340px;
+  width: 500px;
   border-radius: clamp(40px, 8vw, 80px);
   border: 1.5px solid #fff;
   padding: clamp(8px, 1.5vw, 12px) clamp(20px, 4vw, 32px);
@@ -356,8 +374,8 @@ nav ul li a:hover {
 
 .btn-saiba-mais:focus,
 .btn-saiba-mais:hover {
-  background: #fff;
-  color: #413027;
+  background: var(--white);
+  color: var(--text-dark);
   border-color: #413027;
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 8px 24px rgba(0, 0, 0, .25)
@@ -438,7 +456,7 @@ nav ul li a:hover {
 .login-box h2 {
   font-size: clamp(32px, 6vw, 48px);
   font-family: "Inria Sans Bold Local", Arial, sans-serif;
-  color: #fff;
+  color: var(--white);
   text-align: center;
   margin-bottom: 1rem;
   animation: fadeIn .6s ease-out
@@ -556,18 +574,18 @@ nav ul li a:hover {
 }
 
 .rectangle-7 {
-  background: #413027;
+  background: var(--text-dark);
   margin-top: 0
 }
 
 .rectangle-8 {
-  background: #73a8ce;
+  background: var(--primary-light);
   overflow: hidden;
   position: relative
 }
 
 .rectangle-9 {
-  background: #413027;
+  background: var(--text-dark);
   position: relative
 }
 
@@ -592,7 +610,7 @@ nav ul li a:hover {
 .sobre-aquanox {
   font-family: Karantina-Regular, sans-serif;
   font-size: clamp(48px, 8vw, 96px);
-  color: #fff;
+  color: var(--white);
   text-align: center;
   margin-bottom: clamp(30px, 5vw, 60px);
   animation: fadeInDown .8s ease-out
@@ -611,7 +629,7 @@ nav ul li a:hover {
 }
 
 .texto-sobre-aquanox {
-  color: #fff;
+  color: var(--white);
   font-size: clamp(14px, 2vw, 20px);
   font-family: "Inria Sans Light Local", sans-serif;
   line-height: 1.6;
@@ -633,7 +651,7 @@ nav ul li a:hover {
 
 .rectangle-14,
 .rectangle-14-invertida {
-  background: linear-gradient(135deg, #2ecc71 0, #1f5b2c 100%);
+  background: linear-gradient(135deg, var(--secondary) 0, #1f5b2c 100%);
   border-radius: clamp(20px, 4vw, 50px);
   padding: clamp(24px, 4vw, 40px);
   margin: clamp(20px, 4vw, 40px) auto;
@@ -703,7 +721,7 @@ nav ul li a:hover {
 .faq2 {
   font-family: Karantina-Bold, sans-serif;
   font-size: clamp(48px, 8vw, 89px);
-  color: #fff;
+  color: var(--white);
   text-align: center;
   display: block;
   width: 100%;
@@ -727,7 +745,7 @@ nav ul li a:hover {
 }
 
 .rectangle-162 {
-  background: #2b201b;
+  background: var(--text-dark);
   border-radius: 18px;
   width: 100%;
   padding: clamp(16px, 3vw, 24px) clamp(24px, 4vw, 48px);
@@ -747,7 +765,7 @@ nav ul li a:hover {
 }
 
 .rectangle-162:hover {
-  background: #3a2d26;
+  background: var(--text-dark);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, .2)
 }
@@ -772,7 +790,7 @@ nav ul li a:hover {
 }
 
 .caixa-expansivel {
-  background: #6d4c37;
+  background: rgba(0, 0, 0, 0.06);
   border-radius: 0 0 18px 18px;
   width: 100%;
   padding: 0 clamp(24px, 4vw, 48px);
@@ -793,7 +811,7 @@ nav ul li a:hover {
 }
 
 .caixa-expansivel-text {
-  color: #fff;
+  color: var(--white);
   font-family: "Inria Sans Regular Local", Arial, sans-serif;
   font-size: clamp(16px, 2.5vw, 26px);
   line-height: 1.6
@@ -807,7 +825,7 @@ nav ul li a:hover {
 }
 
 .btn-saiba-mais-rectangle7 {
-  background: #73a8ce;
+  background: var(--primary-light);
   font-family: Karantina-Regular, sans-serif;
   font-size: clamp(20px, 3vw, 40px);
   color: #000;
@@ -822,7 +840,7 @@ nav ul li a:hover {
 }
 
 .btn-saiba-mais-rectangle7:hover {
-  background: #000;
+  background: #ffffff;
   color: #73a8ce;
   border-color: #73a8ce;
   transform: translateY(-3px) scale(1.05);
@@ -957,8 +975,8 @@ nav ul li a:hover {
 }
 
 #btnIrPainel {
-  background: #73a8ce;
-  color: #fff;
+  background: var(--primary-light);
+  color: var(--white);
   font-size: clamp(16px, 2vw, 18px);
   font-family: Nexa-Heavy, sans-serif;
   border: none;
@@ -1038,11 +1056,11 @@ nav ul li a:hover {
 
   .inria-regular {
     padding-left: 0rem;
-}
+  }
 
   .btn-saiba-mais {
     margin-left: 0rem;
-    width: 400px;
+    width: 500px;
   }
 
   .login-overlay {
@@ -1055,7 +1073,7 @@ nav ul li a:hover {
   header {
     width: 85%
   }
-  
+
   .login-overlay {
     position: absolute;
     transform: translateX(-50%);
@@ -1066,11 +1084,11 @@ nav ul li a:hover {
     align-items: center
   }
 
-  
+
   .inria-regular {
     font-size: clamp(22px, 6vw, 0px);
     word-wrap: break-word;
-}
+  }
 }
 
 
@@ -1254,7 +1272,7 @@ nav ul li a:hover {
   .inria-regular {
     font-size: 18px;
     justify-content: center;
-   
+
   }
 
   .login-overlay {
@@ -1263,7 +1281,7 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
   }
-  
+
   .banner-container {
     margin-top: 100px;
     min-height: clamp(1100px, 145vh, 1700px)
