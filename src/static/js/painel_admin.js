@@ -20,28 +20,18 @@ function renderValvulas() {
     const box = document.createElement("div");
     box.className = "valvula-box";
     box.id = "valvula" + valvula.id;
-    
+
     // Trunca o nome para 20 caracteres
-    const nomeDisplay = valvula.nome.length > 10 
-      ? valvula.nome.substring(0, 10) + '...' 
+    const nomeDisplay = valvula.nome.length > 10
+      ? valvula.nome.substring(0, 10) + '...'
       : valvula.nome;
-    
+
     box.innerHTML = `
       <div class="valvula-label" data-id="${valvula.id}" style="cursor:pointer;">${nomeDisplay}</div>
-      <div class="status" id="statusValvula${valvula.id}">${
-      valvula.ativada ? "Ativada" : "Desativada"
-    }</div>
-      <img class="mdi-valve-closed" id="imgValvula${
-        valvula.id
-      }Closed" src="/src/static/img/${"mdi--valve.svg"}" alt="${"valvulaFechada"}"/>
-      <img class="mdi-valve-open" id="imgValvula${
-        valvula.id
-      }Open" src="/src/static/img/${"mdi--valve-open.svg"}" alt="${"valvulaAberta"}"/>
-      <button class="toggle-btn ${
-        valvula.ativada ? "ativada" : "desativada"
-      }" id="btnValvula${valvula.id}">${
-      valvula.ativada ? "Desativar" : "Ativar"
-    }</button>
+      <div class="status" id="statusValvula${valvula.id}">${valvula.ativada ? "Ativada" : "Desativada"}</div>
+      <img class="mdi-valve-closed" id="imgValvula${valvula.id}Closed" src="/static/img/mdi--valve.svg" alt="valvulaFechada"/>
+      <img class="mdi-valve-open" id="imgValvula${valvula.id}Open" src="/static/img/mdi--valve-open.svg" alt="valvulaAberta"/>
+      <button class="toggle-btn ${valvula.ativada ? "ativada" : "desativada"}" id="btnValvula${valvula.id}">${valvula.ativada ? "Desativar" : "Ativar"}</button>
     `;
     return box;
   });
@@ -184,7 +174,7 @@ function showConfirmModal(msg, onConfirm, onCancel) {
     modal.style.display = "none";
     if (onCancel) onCancel();
   };
-  
+
   // Fechar ao clicar fora
   modal.onclick = (e) => {
     if (e.target === modal) {
@@ -227,26 +217,26 @@ function showAddValvulaModal(onAdd) {
   modal.querySelector("#addValvulaConfirm").onclick = () => {
     const nome = nomeInput.value.trim();
     const serial = serialInput.value.trim();
-    
+
     // Validação
     if (!nome || !serial) {
       alert("Por favor, preencha todos os campos!");
       nomeInput.focus();
       return;
     }
-    
+
     if (nome.length > 50 || serial.length > 50) {
       alert("Nome e localização devem ter no máximo 50 caracteres!");
       return;
     }
-    
+
     modal.style.display = "none";
     onAdd(nome, serial);
   };
   modal.querySelector("#addValvulaCancel").onclick = () => {
     modal.style.display = "none";
   };
-  
+
   // Fechar ao clicar fora
   modal.onclick = (e) => {
     if (e.target === modal) {
@@ -278,7 +268,7 @@ function showEditValvulaModal(valvulaId) {
     `;
     document.body.appendChild(modal);
   }
-  
+
   const valvula = valvulas.find((v) => v.id === Number(valvulaId));
   if (!valvula) return;
 
@@ -292,31 +282,31 @@ function showEditValvulaModal(valvulaId) {
   modal.querySelector("#editValvulaConfirm").onclick = () => {
     const nome = nomeInput.value.trim();
     const serial = serialInput.value.trim();
-    
+
     // Validação
     if (!nome || !serial) {
       alert("Por favor, preencha todos os campos!");
       nomeInput.focus();
       return;
     }
-    
+
     if (nome.length > 50 || serial.length > 50) {
       alert("Nome e localização devem ter no máximo 50 caracteres!");
       return;
     }
-    
+
     valvula.nome = nome;
     valvula.serial = serial;
     modal.style.display = "none";
     renderValvulas();
   };
-  
+
   modal.querySelector("#editValvulaCancel").onclick = () => {
     modal.style.display = "none";
     // Volta para a modal de informações
     showValvulaActionsModal(valvulaId);
   };
-  
+
   // Fechar ao clicar fora - volta para modal de informações
   modal.onclick = (e) => {
     if (e.target === modal) {
@@ -376,7 +366,7 @@ function showValvulaActionsModal(valvulaId) {
   modal.querySelector("#valvulaDeleteBtn").onclick = () => {
     modal.style.display = "none";
     showConfirmModal(
-      "Deseja realmente excluir esta válvula?", 
+      "Deseja realmente excluir esta válvula?",
       () => {
         valvulas = valvulas.filter((v) => v.id !== Number(valvulaId));
         renderValvulas();
@@ -391,7 +381,7 @@ function showValvulaActionsModal(valvulaId) {
   modal.querySelector("#valvulaCloseBtn").onclick = () => {
     modal.style.display = "none";
   };
-  
+
   // Fechar ao clicar fora
   modal.onclick = (e) => {
     if (e.target === modal) {
@@ -818,15 +808,15 @@ const accountIcon = document.querySelector('.codicon-account');
 let userMenu = null;
 
 if (accountIcon) {
-  accountIcon.addEventListener('click', function(e) {
+  accountIcon.addEventListener('click', function (e) {
     e.stopPropagation();
-    
+
     // Se o menu já existe, remove
     if (userMenu && userMenu.style.display === 'block') {
       userMenu.style.display = 'none';
       return;
     }
-    
+
     // Cria o menu se não existir
     if (!userMenu) {
       userMenu = document.createElement('div');
@@ -837,19 +827,19 @@ if (accountIcon) {
         </div>
       `;
       document.body.appendChild(userMenu);
-      
+
       // Adiciona evento de clique no item
-      document.getElementById('voltarInicio').addEventListener('click', function() {
+      document.getElementById('voltarInicio').addEventListener('click', function () {
         window.location.href = '/';
       });
     }
-    
+
     // Mostra o menu
     userMenu.style.display = 'block';
   });
-  
+
   // Fecha o menu ao clicar fora
-  document.addEventListener('click', function(e) {
+  document.addEventListener('click', function (e) {
     if (userMenu && !userMenu.contains(e.target) && e.target !== accountIcon) {
       userMenu.style.display = 'none';
     }
