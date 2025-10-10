@@ -1,0 +1,273 @@
+@media (max-width: 1440px) {
+    .login-box {
+        margin-right: -220px;
+    }
+
+    .text-overlay h1 {
+        margin-left: -200px;
+    }
+
+    .inria-regular {
+        margin-left: -200px;
+    }
+}
+
+@media (max-width: 1280px) {
+
+    header {
+        width: 1180px;
+    }
+
+    .header-content {
+        max-width: 1180px;
+    }
+
+    .texto-sobre-aquafloww {
+        margin: 50px;
+    }
+}
+
+
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 12px;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    align-items: center;
+    text-align: center;
+  }
+  .banner-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    position: static;
+  }
+  .btn-saiba-mais-container {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 20px 0 0 0;
+  }
+  .footer-content {
+    padding: 0 4px;
+    gap: 16px;
+  }
+  .footer-logo {
+    height: 32px;
+    padding: 2px 6px;
+  }
+  .footer-app-logo {
+    height: 24px;
+  }
+  .footer-bottom {
+    font-size: 0.85rem;
+    padding: 10px 0 8px 0;
+  }
+
+  header {
+    width: 100vw;
+    position: static;
+    top: 0;
+    left: 0;
+    transform: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 8px 0;
+    box-shadow: none;
+    background-color: #bbdefb;
+  }
+  .header-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    max-width: 100vw;
+    padding: 0 8px;
+    height: auto;
+  }
+  .logo {
+    height: 64px;
+    min-height: 64px;
+    max-height: 80px;
+    margin-bottom: 0;
+  }
+  nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+    opacity: 1;
+    pointer-events: all;
+    transform: none;
+  }
+  nav ul {
+    flex-direction: row;
+    gap: 8px;
+    width: auto;
+    padding: 0;
+    margin: 0;
+  }
+  nav ul li {
+    width: auto;
+    text-align: center;
+    margin: 0;
+  }
+  nav ul li a {
+    font-size: 0.95rem;
+    padding: 4px 6px;
+    width: auto;
+  }
+  .user-icon {
+    height: 28px;
+    margin-top: 0;
+  }
+
+  .banner-container {
+    margin-top: 0;
+    padding: 0 4px;
+    min-height: unset;
+    position: relative;
+    background: none;
+    overflow: visible;
+  }
+  /* Remover o efeito azul no mobile */
+  .rectangle-2 {
+    display: none;
+  }
+
+  .banner-flex {
+    position: relative;
+    z-index: 2;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    margin-top: 24px;
+  }
+  .text-overlay.left {
+    position: static;
+    width: 100%;
+    max-width: 100vw;
+    padding: 0 4px;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    background: none;
+    z-index: 2;
+  }
+  .text-overlay h1 {
+    font-size: 45px;
+    font-weight: 500;
+    padding-left: 0;
+    text-align: left;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    font-family: 'Satoshi', sans-serif;
+    margin-left: 1.0rem;
+    font-weight: 500;
+    color: #ffffff;
+  }
+  .descricao-inria {
+    padding-left: 0;
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 15px;
+    max-width: 100vw;
+    font-family: 'Satoshi', sans-serif;
+    word-break: break-word;
+  }
+  .inria-regular {
+    font-size: 1.0rem;
+    padding-left: 0;
+    margin-left: 1.0rem;
+    text-align: left;
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #ffffff;
+    background: none;
+  }
+  .btn-saiba-mais {
+    width: 90vw;
+    max-width: 220px;
+    font-size: 0.95rem;
+    padding: 8px 0;
+    margin-left: 0;
+    height: auto;
+    border-radius: 24px;
+    margin-bottom: 8px;
+    z-index: 2;
+    background: var(--primary-light);
+    color: #fff;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 8px #0002;
+  }
+  .login-overlay {
+    position: static;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto 12px auto;
+    padding: 0 4px;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: none;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+  }
+  .login-box {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 35px;
+    padding: 12px 4px;
+    margin-right: 0;
+    border-radius: 14px;
+    margin-top: 0 !important;
+    box-shadow: 0 2px 8px #0002;
+    background: rgba(217,217,217,0.15);
+    border: 1px solid #fff;
+  }
+  .login-box h2 {
+    font-size: 2.0rem;
+    margin-bottom: 8px;
+  }
+  .login-box input {
+    font-size: 0.95rem;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+  .btn-entrar {
+    font-size: 0.95rem;
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .sobre-aquafloww {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 45px;
+    line-height: 1.1em;
+  }
+
+  .texto-sobre-aquafloww {
+    text-align: left;
+    font-size: 1.2em;
+  }
+
+  
+
+}
+

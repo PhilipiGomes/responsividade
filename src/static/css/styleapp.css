@@ -1,0 +1,961 @@
+/* ===== PAINEL ADMIN RESPONSIVO - TEMA aquafloww ===== */
+
+/* Paleta de Cores:
+   - Azul Água (principal): #0077CC
+   - Verde Natureza (secundário): #4CAF50
+   - Cinza Claro (fundos): #E0E0E0
+   - Branco: #FFFFFF
+   - Laranja Solar (destaque): #FF9800
+   - Azul Escuro Profundo (textos): #003366
+*/
+
+/* Fontes */
+@font-face {
+  font-family: "Karantina-Bold";
+  src: url("/static/fonts/Karantina-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nexa-Heavy";
+  src: url("/static/fonts/Nexa-Heavy.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Reset */
+.app,
+.app * {
+  box-sizing: border-box;
+}
+
+/* Container principal */
+.app {
+   background: #7fc0f5;
+  background: linear-gradient(178deg, rgba(127, 192, 245, 1) 0%, rgba(90, 174, 242, 1) 50%, rgba(28, 129, 212, 1) 100%);
+  min-height: 100vh;
+  position: relative;
+  padding: clamp(20px, 3vw, 40px);
+  padding-bottom: clamp(60px, 8vw, 120px);
+  padding-top: 220px;
+}
+
+/* Faixa de fundo atrás da logo */
+.logo-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 120px;
+  background:#bbdefbee;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 2px 10px rgba(0, 51, 102, 0.3);
+}
+
+/* Logo responsiva */
+.logo {
+  width: clamp(230px, 15vw, 200px);
+  height: auto;
+  position: fixed;
+  right: clamp(20px, 3vw, 40px);
+  top: -50px;
+  z-index: 20;
+}
+
+/* Usuário */
+.frame-3 {
+  width: clamp(230px, 15vw, 200px);
+  height: auto;
+  position: fixed;
+  align-items: center;
+  justify-content: flex-start;
+  left: clamp(20px, 3vw, 40px);
+  top: 30px;
+  z-index: 100;
+  gap: clamp(10px, 2vw, 20px);
+}
+
+.frame-3-1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  gap: clamp(10px, 2vw, 20px);
+}
+
+.codicon-account {
+  width: clamp(40px, 6vw, 70px);
+  height: clamp(40px, 6vw, 70px);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.ol-usu-rio {
+  color: #FFFFFF;
+  font-family: "InriaSans-Bold", sans-serif;
+  font-size: clamp(20px, 3vw, 40px);
+  margin-left: clamp(10px, 2vw, 20px);
+  text-shadow: 0 2px 4px rgba(0, 51, 102, 0.3);
+}
+
+/* Cabeçalho de funções */
+.frame-5 {
+  background: rgba(0, 51, 102, 0.7);
+  padding: clamp(10px, 2vw, 20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: clamp(80px, 45px);
+  margin-bottom: clamp(30px, 4vw, 50px);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 51, 102, 0.3);
+}
+
+.funcoes {
+  color: #FFFFFF;
+  font-family: "Karantina-Bold", "Karantina", cursive, sans-serif;
+  font-size: clamp(32px, 5vw, 65px);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 51, 102, 0.4);
+}
+
+/* Container de válvulas responsivo */
+.valvulas-container,
+.estacao-container {
+  width: min(95%, 1080px);
+  margin: 0 auto clamp(20px, 3vw, 40px);
+  position: relative;
+}
+
+/* Cabeçalho expandível */
+.rectangle-32 {
+  background: #FFFFFF;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  min-height: 60px;
+  height: auto;
+  padding: clamp(10px, 2vw, 15px) clamp(15px, 3vw, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 10px rgba(0, 51, 102, 0.15);
+}
+
+.valve-3,
+.estacao-icon {
+  width: clamp(35px, 5vw, 50px);
+  height: clamp(35px, 5vw, 50px);
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.valvulas,
+.estacao-label {
+  color: #003366;
+  font-family: "Nexa-Heavy", Arial, sans-serif;
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: bold;
+  flex: 1;
+  min-width: 100px;
+}
+
+.vector {
+  width: clamp(20px, 3vw, 24px);
+  height: clamp(20px, 3vw, 24px);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+/* Conteúdo expansível */
+.valvulas-exemplo,
+.estacao-exemplo {
+  display: block;
+  background: #FFFFFF;
+  border-radius: 0 0 20px 20px;
+  padding: clamp(20px, 3vw, 32px);
+  width: 100%;
+  max-height: none;
+  overflow-y: auto;
+  box-shadow: 0 2px 10px rgba(0, 51, 102, 0.15);
+}
+
+/* Grid de válvulas responsivo */
+.assets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2vw, 24px);
+  width: 100%;
+  padding-top: clamp(30px, 4vw, 60px);
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-height: none;
+}
+
+/* Box de válvula estilizado */
+.valvula-box {
+  background: linear-gradient(135deg, rgba(224, 224, 224, 0.5), rgba(255, 255, 255, 0.8));
+  border-radius: 20px;
+  padding: clamp(12px, 2vw, 16px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+  max-width: 220px;
+  flex: 1 1 180px;
+  min-height: 220px;
+  box-shadow: 0 4px 12px rgba(0, 119, 204, 0.2);
+  position: relative;
+  margin-bottom: 16px;
+  word-break: break-word;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 2px solid rgba(0, 119, 204, 0.2);
+}
+
+.valvula-box:hover {
+  box-shadow: 0 8px 24px rgba(0, 119, 204, 0.3);
+  transform: translateY(-4px) scale(1.03);
+  border-color: #0077CC;
+}
+
+.valvula-label {
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(14px, 2vw, 16px);
+  color: #003366;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  word-break: break-word;
+  margin-bottom: 8px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.valvula-label:hover {
+  background: rgba(0, 119, 204, 0.1);
+}
+
+.valvula-box img {
+  position: absolute;
+  top: 28%;
+  width: clamp(60px, 10vw, 90px);
+  height: clamp(60px, 10vw, 90px);
+  margin: 10px 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.mdi-valve-open {
+  opacity: 0;
+}
+
+.valvula-box.show-image .mdi-valve-open {
+  opacity: 1;
+}
+
+.valvula-box.show-image .mdi-valve-closed {
+  opacity: 0;
+}
+
+.status {
+  font-family: "Nexa-Heavy", Arial, sans-serif;
+  font-size: clamp(12px, 2vw, 14px);
+  margin-bottom: 8px;
+  min-height: 18px;
+  font-weight: 600;
+  margin-top: -15px;
+}
+
+.status.ativada {
+  color: #4CAF50;
+}
+
+.status.desativada {
+  color: #FF9800;
+}
+
+.toggle-btn {
+  font-family: "Nexa-Heavy", Arial, sans-serif;
+  font-size: clamp(12px, 2vw, 14px);
+  padding: clamp(6px, 1vw, 8px) clamp(12px, 2vw, 16px);
+  border-radius: 8px;
+  min-width: 80px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  margin-top: auto;
+  font-weight: 600;
+}
+
+.toggle-btn.ativada {
+  background: #FF9800;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+}
+
+.toggle-btn.ativada:hover {
+  background: #F57C00;
+  transform: scale(1.05);
+}
+
+.toggle-btn.desativada {
+  background: #4CAF50;
+  color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.toggle-btn.desativada:hover {
+  background: #388E3C;
+  transform: scale(1.05);
+}
+
+/* Estação Meteorológica */
+.weather-main {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(224, 224, 224, 0.95));
+  border-radius: 18px;
+  padding: clamp(16px, 3vw, 24px);
+  margin-bottom: clamp(16px, 3vw, 24px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 15px rgba(0, 119, 204, 0.2);
+  border: 2px solid rgba(0, 119, 204, 0.2);
+}
+
+.weather-main-title {
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(16px, 2.5vw, 18px);
+  font-weight: 700;
+  color: #003366;
+  margin-bottom: 8px;
+}
+
+.weather-main-temp-row {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 8px;
+}
+
+.weather-main-temp {
+  font-family: "Nexa-Heavy", cursive, sans-serif;
+  font-size: clamp(48px, 8vw, 64px);
+  font-weight: 700;
+  color: #0077CC;
+  line-height: 1;
+}
+
+.weather-main-unit {
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(28px, 5vw, 38px);
+  color: #0077CC;
+  margin-left: 4px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.weather-main-minmax-row,
+.weather-main-extra-row {
+  display: flex;
+  gap: clamp(16px, 3vw, 32px);
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.weather-main-min,
+.weather-main-max,
+.weather-main-extra-label,
+.weather-main-extra-value {
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
+  color: #003366;
+}
+
+.weather-main-extra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+/* Tabs e cards do clima */
+.weather-period-select {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.weather-period-select select {
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(14px, 2vw, 16px);
+  border-radius: 8px;
+  padding: 6px 18px;
+  border: 2px solid #0077CC;
+  background: #FFFFFF;
+  color: #003366;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.weather-period-select select:hover {
+  background: rgba(0, 119, 204, 0.1);
+}
+
+.weather-period-select label {
+  color: #003366;
+  font-weight: 600;
+}
+
+.weather-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.weather-tab {
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(13px, 2vw, 16px);
+  color: #003366;
+  background: #E0E0E0;
+  border-radius: 12px;
+  padding: 6px clamp(12px, 2vw, 18px);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.weather-tab:hover {
+  background: rgba(0, 119, 204, 0.2);
+}
+
+.weather-tab.active {
+  background: #0077CC;
+  color: #FFFFFF;
+  border-color: #003366;
+}
+
+.weather-cards {
+  display: flex;
+  gap: clamp(12px, 2vw, 18px);
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+
+.weather-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(224, 224, 224, 0.7));
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 119, 204, 0.2);
+  padding: clamp(14px, 2vw, 18px);
+  min-width: clamp(100px, 15vw, 120px);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border: 2px solid rgba(0, 119, 204, 0.2);
+}
+
+.weather-card-title {
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(14px, 2vw, 16px);
+  color: #003366;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.weather-card-temp {
+  font-family: "Nexa-Heavy", cursive, sans-serif;
+  font-size: clamp(16px, 2.5vw, 19px);
+  color: #0077CC;
+  font-weight: 700;
+}
+
+.weather-card-desc,
+.weather-card-minmax {
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(12px, 2vw, 14px);
+  color: #003366;
+  opacity: 0.8;
+}
+
+/* Modais responsivos - CENTRALIZADOS */
+#confirmModal,
+#addValvulaModal,
+#editValvulaModal,
+#valvulaActionsModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 51, 102, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilo dos modais */
+.custom-modal-content {
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 51, 102, 0.3);
+  min-width: min(90vw, 320px);
+  max-width: 500px;
+  padding: clamp(20px, 4vw, 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 3px solid #0077CC;
+}
+
+.custom-modal-title {
+  font-family: "Karantina-Bold", cursive, sans-serif;
+  font-size: clamp(24px, 4vw, 32px);
+  color: #0077CC;
+  margin-bottom: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.custom-modal-msg {
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(14px, 2.5vw, 18px);
+  color: #003366;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.custom-modal-actions {
+  display: flex;
+  gap: clamp(12px, 3vw, 24px);
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.custom-modal-btn {
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(14px, 2.5vw, 18px);
+  padding: 10px clamp(20px, 4vw, 32px);
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+  min-width: 100px;
+}
+
+.custom-modal-btn-yes {
+  background: #4CAF50;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.custom-modal-btn-yes:hover {
+  background: #388E3C;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.custom-modal-btn-no {
+  background: #FF9800;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+}
+
+.custom-modal-btn-no:hover {
+  background: #F57C00;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+}
+
+.custom-modal-btn-delete {
+  background: #E53935;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+}
+
+.custom-modal-btn-delete:hover {
+  background: #C62828;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(229, 57, 53, 0.4);
+}
+
+/* Inputs dos modais */
+.custom-modal-content input[type="text"] {
+  width: 100%;
+  padding: clamp(10px, 2vw, 14px);
+  font-size: clamp(14px, 2vw, 16px);
+  border-radius: 8px;
+  border: 2px solid #0077CC;
+  margin-bottom: 12px;
+  font-family: "Nexa-Heavy", sans-serif;
+  transition: all 0.3s;
+}
+
+.custom-modal-content input[type="text"]:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.custom-modal-content label {
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(14px, 2vw, 16px);
+  color: #003366;
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Informações da válvula na modal */
+.valvula-info {
+  width: 100%;
+  background: rgba(224, 224, 224, 0.5);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(0, 119, 204, 0.2);
+}
+
+.valvula-info-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  font-family: "Nexa-Heavy", sans-serif;
+  gap: 4px;
+}
+
+.valvula-info-label {
+  color: #003366;
+  font-weight: 600;
+  font-size: clamp(13px, 2vw, 15px);
+}
+
+.valvula-info-value {
+  color: #0077CC;
+  font-weight: 700;
+  font-size: clamp(14px, 2vw, 16px);
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Botão adicionar válvula estilizado */
+.adicionar-valvula {
+  color: #FFFFFF;
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 700;
+  cursor: pointer;
+  background: #4CAF50;
+  border-radius: 10px;
+  padding: clamp(10px, 2vw, 14px) clamp(28px, 4vw, 40px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 119, 204, 0.3);
+  border: none;
+  transition: all 0.3s;
+  margin: 12px 0;
+  letter-spacing: 1px;
+}
+
+.adicionar-valvula:hover,
+.adicionar-valvula:focus {
+  background: #388E3C;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 20px rgba(0, 119, 204, 0.4);
+  outline: none;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .logo-bar {
+    height: 160px;
+  }
+  .logo {
+    width: 120px;
+    right: 20px;
+    top: -16px;
+  }
+  .app {
+    padding-top: 180px;
+  }
+  .frame-3 {
+    left: 20px;
+    top: 20px;
+  }
+  .codicon-account {
+    width: 50px;
+    height: 50px;
+  }
+  .valvulas-container,
+  .estacao-container {
+    width: 95%;
+  }
+  .assets {
+    gap: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo-bar {
+    height: 120px;
+  }
+  .logo {
+    width: 100px;
+    right: 15px;
+    top: -12px;
+  }
+  .app {
+    padding-top: 140px;
+  }
+  .frame-3 {
+    left: 15px;
+    top: 15px;
+  }
+  .codicon-account {
+    width: 40px;
+    height: 40px;
+  }
+  .ol-usu-rio {
+    font-size: 20px;
+    margin-left: 0;
+  }
+  .frame-5 {
+    margin-top: 100px;
+    padding: 15px 10px;
+  }
+  .funcoes {
+    font-size: 36px;
+  }
+  .assets {
+    gap: 12px;
+    padding-top: 40px;
+  }
+  .valvula-box {
+    min-width: 110px;
+    max-width: 150px;
+    flex: 1 1 120px;
+    min-height: 180px;
+    padding: 10px;
+  }
+  .rectangle-32 {
+    min-height: 50px;
+    padding: 10px 15px;
+  }
+  .weather-main {
+    max-width: 100%;
+  }
+  .weather-tabs {
+    justify-content: flex-start;
+  }
+  .weather-tab {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+  .weather-cards {
+    gap: 12px;
+  }
+  .weather-card {
+    min-width: 100px;
+    padding: 12px;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+  .logo-bar {
+    height: 80px;
+  }
+  .logo {
+    width: 120px;
+    right: 9px;
+    top: -10px;
+    height: 100px;
+  }
+  .app {
+    padding-top: 90px;
+  }
+  .frame-3 {
+    left: 10px;
+    top: 10px;
+  }
+  .codicon-account {
+    width: 60px;
+    height: 60px;
+    left: 20px;
+  }
+  .ol-usu-rio {
+    font-size: 18px;
+  }
+  .frame-5 {
+    margin-top: 70px;
+    padding: 10px;
+  }
+  .funcoes {
+    font-size: 28px;
+  }
+  .assets {
+    gap: 10px;
+    padding-top: 30px;
+  }
+  .valvula-box {
+    min-width: 140px;
+    max-width: 160px;
+    flex: 1 1 140px;
+    min-height: 200px;
+    padding: 12px;
+  }
+  .valvula-label {
+    font-size: 14px;
+    padding: 6px;
+    margin-bottom: 12px;
+  }
+  .valvula-box img {
+    width: 70px;
+    height: 70px;
+    top: 32%;
+  }
+  .status {
+    font-size: 13px;
+    margin-top: -10px;
+  }
+  .toggle-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    min-width: 80px;
+  }
+  .adicionar-valvula {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+  .rectangle-32 {
+    padding: 10px 15px;
+  }
+  .valve-3,
+  .estacao-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .valvulas,
+  .estacao-label {
+    font-size: 16px;
+  }
+  .weather-main-temp {
+    font-size: 40px;
+  }
+  .weather-main-unit {
+    font-size: 24px;
+  }
+  .weather-tab {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  .custom-modal-content {
+    padding: 20px;
+    min-width: 85vw;
+  }
+  .custom-modal-title {
+    font-size: 22px;
+  }
+  .custom-modal-btn {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}
+
+/* Mobile extra pequeno (< 390px) */
+@media (max-width: 389px) {
+  .logo-bar {
+    height: 70px;
+  }
+  .logo {
+    width: 90px;
+    top: -10px;
+  }
+  .app {
+    padding-top: 80px;
+  }
+  .frame-5 {
+    margin-top: 60px;
+  }
+  .valvula-box {
+    min-width: 130px;
+    max-width: 150px;
+    flex: 1 1 130px;
+    min-height: 190px;
+  }
+  .assets {
+    gap: 8px;
+  }
+}
+
+/* Menu do usuário */
+.user-menu {
+  display: none;
+  position: fixed;
+  top: clamp(70px, 10vw, 90px);
+  left: clamp(20px, 3vw, 40px);
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 51, 102, 0.3);
+  z-index: 9998;
+  border: 2px solid #0077CC;
+  min-width: 180px;
+}
+
+.user-menu-item {
+  padding: 12px 20px;
+  font-family: "Nexa-Heavy", sans-serif;
+  font-size: 14px;
+  color: #003366;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-menu-item:hover {
+  background: rgba(0, 119, 204, 0.1);
+}
+
+.user-menu-item:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.user-menu-item:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.codicon-account {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.codicon-account:hover {
+  transform: scale(1.1);
+}
