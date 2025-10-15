@@ -70,12 +70,12 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--text-dark)
+  background: var(--primary-light);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--white);
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 
@@ -97,12 +97,12 @@ html {
 body {
   background: var(--primary-light);
   line-height: 1.6;
-  background-image: url(/static/img/HERO-BACKGROUND.jpg);
-  
+  background-color: #0071BC;
+  background-image: url(/static/img/HERO-BACKGROUND.avif);
 }
 
 header {
-  background-color: #ffffffcb;
+  background-color: #ffffff99;
   /* tom azul claro translúcido */
   padding: clamp(.5rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
   border-radius: clamp(30px, 6vw, 80px);
@@ -137,10 +137,6 @@ header.scrolled {
   height: 150px;
   width: auto;
   transition: transform .3s ease
-}
-
-.logo:hover {
-  transform: scale(1.05)
 }
 
 .hamburger {
@@ -276,7 +272,7 @@ nav ul li a:hover {
 .banner-container {
   position: relative;
   width: 100%;
-  min-height: clamp(800px, 100vh, 1000px);
+  min-height: 923px;
   margin-top: clamp(80px, 12vw, 140px);
   padding: 0
 }
@@ -453,8 +449,8 @@ nav ul li a:hover {
   margin-top: -40px;
   background: rgba(62, 193, 227, 0.08);
   border: 1.5px solid #ffffff;
-  border-radius: 30px;
-  backdrop-filter: blur(15px);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(15px);
   padding: clamp(24px, 4vw, 32px);
   width: min(90vw, 420px);
@@ -472,7 +468,8 @@ nav ul li a:hover {
   font-family: 'Satoshi', sans-serif;
   color: var(--white);
   text-align: center;
-  margin-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 1.4rem;
   animation: fadeIn .6s ease-out
 }
 
@@ -490,7 +487,7 @@ nav ul li a:hover {
   padding: clamp(10px, 2vw, 12px);
   margin-bottom: 1rem;
   border: 1px solid #ddd;
-  border-radius: 15px;
+  border-radius: 135px;
   font-size: clamp(14px, 2vw, 16px);
   transition: all .3s ease;
   background: rgba(255, 255, 255, .9)
@@ -505,24 +502,24 @@ nav ul li a:hover {
 
 .btn-entrar {
   background: #0071BC;
+  background-image: radial-gradient(circle, #49b1f6, #0071BC );
   color: #fff;
-  font-size: clamp(16px, 2.5vw, 20px);
+  font-size: clamp(16px, 2.5vw, 22px);
   font-weight: 700;
-  padding: clamp(12px, 2vw, 15px);
+  padding: clamp(12px, 2vw, 20px);
   border: none;
   font-family: 'Satoshi', sans-serif;
-  border-radius: 15px;
-  cursor: pointer;
+  border-radius: 135px;
+  cursor: pointer;  
   width: 100%;
-  transition: all .3s cubic-bezier(.4, 0, .2, 1);
-  box-shadow: 0 4px 12px rgba(76, 175, 80, .3)
+  transition: all .3s cubic-bezier(.8, 0, .2, 1);
+  box-shadow: inset 0 0 10px #9dd8ff;
 }
 
 .btn-entrar:focus,
 .btn-entrar:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, .4);
-  background: #1d7fc1;
+  background-image: radial-gradient(circle, #479cd4, #0071BC );
 }
 
 .btn-entrar:active {
@@ -578,6 +575,7 @@ nav ul li a:hover {
   text-decoration: underline
 }
 
+
 .rectangle-7,
 .rectangle-8,
 .rectangle-9 {
@@ -600,7 +598,8 @@ nav ul li a:hover {
 
 .rectangle-9 {
   background: #0071BC;
-  position: relative
+  position: relative;
+  min-height: 800px;
 }
 
 .img-irrigacao-rectangle8 {
@@ -668,8 +667,8 @@ nav ul li a:hover {
 
 .rectangle-14,
 .rectangle-14-invertida {
-  background: #1F5B2C;
-  border-radius: clamp(20px, 4vw, 50px);
+  background: #3a8f2b;
+  border-radius: clamp(20px, 4vw, 503px);
   padding: clamp(24px, 4vw, 40px);
   margin: clamp(20px, 4vw, 40px) auto;
   max-width: min(90%, 690px);
@@ -678,6 +677,7 @@ nav ul li a:hover {
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
   position: relative;
+  margin-bottom: 100px;
   overflow: hidden
 }
 
@@ -689,7 +689,7 @@ nav ul li a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #1F5B2C;
+  background: #28661d;
   opacity: 0;
   transition: opacity .5s ease
 }
@@ -697,7 +697,7 @@ nav ul li a:hover {
 .rectangle-14-invertida:hover,
 .rectangle-14:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, .25)
+  box-shadow: 0 16px 48px rgba(0, 0, 0, .15)
 }
 
 .rectangle-14-invertida:hover::before,
@@ -713,7 +713,7 @@ nav ul li a:hover {
 
 .rectangle-14-content h2,
 .rectangle-14-content-invertida h2 {
-  font-family: "Inria Sans Bold Local", Arial, sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-size: clamp(28px, 5vw, 48px);
   color: #fff;
   margin-bottom: 1rem;
@@ -728,26 +728,28 @@ nav ul li a:hover {
 
 .rectangle-14-content p,
 .rectangle-14-content-invertida p {
-  font-family: "Inria Sans Regular Local", sans-serif;
+  font-family: 'Satoshi', sans-serif;
   font-size: clamp(14px, 2vw, 18px);
-  color: #fff;
+  color: #ffffffdb;
+  font-weight: 500;
   line-height: 1.5;
   text-align: center
 }
 
 .faq2 {
-  color: var(--primary);
-  font-family: Karantina-Bold, sans-serif;
+  color: var(--white);
+  font-family: 'Satoshi', sans-serif;
   font-size: clamp(48px, 8vw, 89px);
   text-align: center;
   display: block;
+  padding-top: 100px;
   width: 100%;
   margin: 0 auto clamp(10px, 2vw, 20px)
 }
 
 .d-vidas-sobre-o-projeto {
-  font-family: "Inria Sans Bold Local", sans-serif;
-  font-size: clamp(20px, 4vw, 36px);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(20px, 4vw, 30px);
   color: #fff;
   text-align: center;
   display: block;
@@ -762,9 +764,9 @@ nav ul li a:hover {
 }
 
 .rectangle-162 {
-  background: var(--primary);
+  background: var(--primary-xlight);
   color: var(--white);
-  border-radius: 18px;
+  border-radius: 80px;
   width: 100%;
   padding: clamp(16px, 3vw, 24px) clamp(24px, 4vw, 48px);
   display: flex;
@@ -773,34 +775,30 @@ nav ul li a:hover {
   cursor: pointer;
   gap: 1rem;
   transition: all .3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+
   position: relative;
   z-index: 2
 }
 
 .rectangle-162.expanded {
-  border-radius: 18px 18px 0 0
-}
-
-.rectangle-162:hover {
-  background: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, .2)
+  border-radius: 80px 80px 0 0;
+  background-color: var(--primary-light);
 }
 
 .rectangle-162-text {
-  color: #fff;
+  color: #0071BC;
   font-family: "Inria Sans Bold Local", Arial, sans-serif;
   font-size: clamp(18px, 3vw, 32px);
   font-weight: 700;
-  flex: 1
+  flex: 1;
+  padding-top: 8px;
 }
 
 .seta {
   height: clamp(20px, 3vw, 30px);
   width: auto;
   transition: transform .5s cubic-bezier(.4, 0, .2, 1);
-  flex-shrink: 0
+  flex-shrink: 0;
 }
 
 .seta.girada {
@@ -809,14 +807,14 @@ nav ul li a:hover {
 
 .caixa-expansivel {
   background: var(--primary-xlight);
-  border-radius: 0 0 18px 18px;
+  border-radius: 0 0 100px 100px;
   width: 100%;
   padding: 0 clamp(24px, 4vw, 48px);
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: all .5s cubic-bezier(.4, 0, .2, 1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, .15);
+  box-shadow: 0 8px 16px rgba(118, 118, 118, 0.5);
   position: relative;
   z-index: 1;
   margin-top: -2px
@@ -848,7 +846,7 @@ nav ul li a:hover {
   font-size: 24px;
   height: 110px;
   color: #002239;
-  border-radius: 15px;
+  border-radius: 145px;
   border: 1.5px solid #fff;
   padding: clamp(8px, 1.5vw, 42px) clamp(24px, 4vw, 48px);
   cursor: pointer;
@@ -862,9 +860,7 @@ nav ul li a:hover {
 .btn-saiba-mais-rectangle7:hover {
   background: #ffffff;
   color: #73a8ce;
-  border-color: #73a8ce;
-  transform: tscale(1.05);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .25)
+  transform: translateY(-2px);
 }
 
 .img-show {
@@ -909,7 +905,7 @@ nav ul li a:hover {
   width: 100%;
   background: #0071BC;
   color: #fff;
-  font-family: "Inria Sans Regular Local", Arial, sans-serif;
+  font-family: 'Satoshi', sans-serif;
   padding: 32px 0 0 0;
   margin-top: 0;
   position: relative;
